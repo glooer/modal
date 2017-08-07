@@ -1,0 +1,62 @@
+body {
+  /*background: url('../background.png');
+  background-size: cover;
+  background-repeat: no-repeat;*/
+  transform: scale(1);
+  transition: all .5s;
+  z-index: 0;
+}
+
+body.modal_open {
+  transform: scale(1.04);
+  overflow: hidden;
+  filter: blur(1px);
+  opacity: .5;
+}
+
+.modal {
+  overflow: auto;
+  max-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*z-index: -999;*/
+  opacity: 0;
+  transition: all .5s;
+  transform: scale(1.05);
+  display: flex;
+  padding: 1rem;
+}
+
+.modal.fake {
+  display: none;
+}
+
+.modal > .background {
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -10000px;
+}
+
+.modal.open {
+  display: flex;
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1);
+}
+
+.modal > .body {
+  padding: 1rem;
+  min-width: 200px;
+  min-height: 100px;
+  background: white;
+  /* border: 1px solid; */
+  z-index: 1;
+  margin: auto;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
